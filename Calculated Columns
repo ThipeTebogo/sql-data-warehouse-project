@@ -1,0 +1,11 @@
+Age = DATEDIFF('gold dim_customers'[birthdate], TODAY(), YEAR)
+
+Age Group = 
+SWITCH(
+    TRUE(),
+    'gold dim_customers'[Age] < 21, "Under 25",
+    'gold dim_customers'[Age] < 35, "25 - 34",
+    'gold dim_customers'[Age] < 45, "35 - 44",
+    'gold dim_customers'[Age] < 55, "45 - 54",
+    "55+"
+)
