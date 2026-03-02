@@ -1,0 +1,8 @@
+Date Table = 
+ ADDCOLUMNS(
+    CALENDAR(MIN('gold fact_sales'[order_date]), MAX('gold fact_sales'[order_date])),
+    "Year", YEAR([DATE]),
+    "Month", FORMAT([Date], "MMM"),
+    "Month Number", MONTH([Date]),
+    "YearMonth", FORMAT([Date], "YYYY-MM"
+    ))
